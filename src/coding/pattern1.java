@@ -13,6 +13,7 @@ public class pattern1 {
       for (int j = 1; j <= i; j++) {
         System.out.print(ch);
       }
+      System.out.println(); // Add newline after each row
     }
   }
 }
