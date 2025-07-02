@@ -1,4 +1,3 @@
-package main;
 import coding.pattern1;
 
 public class Main {

@@ -1,0 +1,17 @@
+├── pom.xml
+├── replit.nix
+├── src/
+│   ├── main/
+│   │   └── java/
+│   │       ├── coding/
+│   │       │   └── pattern1.java
+│   │       ├── AnonymousClass.java
+│   │       ├── FileHandling.java
+│   │       ├── FileHandling2.java
+│   │       ├── FileHandling3.java
+│   │       └── Main.java
+│   └── test/
+│       └── java/
+│           └── MainTest.java
+
+okay i want you to teach me this package and import thing in java in detail. for example i want you to explain what the recommended folder structure is in java where everything like maven or other libraries work out of the box for example i need a java project where i want to do 3 things, 1. make a folder for coding problem solutions 2. make a folder for learning java concepts 3. make a folder for testing some of those java concept files i.e. unit testing uning junit
