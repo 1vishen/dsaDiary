@@ -1,21 +1,18 @@
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 public class MainTest {
 
     @Test
-    void addition() {
-        System.out.println("Running addition test...");
+    void additionTest() {
+        System.out.println("Running test 1...");
         assertEquals(2, 1 + 1);
-        System.out.println("Addition test passed: 1 + 1 = 2");
     }
 
     @Test
-    void subtraction() {
-        System.out.println("Running subtraction test...");
-        assertEquals(0, 1 - 1);
-        System.out.println("Subtraction test passed: 1 - 1 = 0");
+    void subtractionTest() {
+        System.out.println("Running test 2...");
+        assertEquals(1, 2 - 1);
     }
 
 }

@@ -3,7 +3,7 @@
 ├── src/
 │   ├── main/
 │   │   └── java/
-│   │       ├── coding/
+│   │       ├── coding-problems/
 │   │       │   └── pattern1.java
 │   │       ├── AnonymousClass.java
 │   │       ├── FileHandling.java
