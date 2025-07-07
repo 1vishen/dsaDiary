@@ -32,12 +32,12 @@ public class AnonymousClass {
       }
     });
 
-    System.out.println("---");
+    System.out.println();
 
     System.out.println("Using lambda:");
     people.forEach(p -> p.printName());
 
-    System.out.println("---");
+    System.out.println();
 
     System.out.println("Using method reference:");
     people.forEach(Person::printName);
