@@ -10,11 +10,31 @@ public class RuntimePoly {
     d = new C();
     d.disp();
 
+    System.out.println("2nd implementation:");
+    DisplayClass dc = new DisplayClass();
+    dc.dispFromDisplayClass(new A());
+    dc.dispFromDisplayClass(new B());
+    dc.dispFromDisplayClass(new C());
+    /*
+     * The first implementation manually switches references, while the second uses
+     * a helper class for cleaner delegation—both achieve runtime polymorphism. The
+     * second is more organized and extensible.
+     */
+
   }
 }
 
 interface Displayable {
   void disp();
+}
+
+// 2nd implementation
+class DisplayClass {
+  public Displayable d;
+
+  public void dispFromDisplayClass(Displayable d) {
+    d.disp();
+  }
 }
 
 class A implements Displayable {
