@@ -1,0 +1,352 @@
+
+I am practicing SQL Queries:-
+---
+I am practicing on 2 sites, on 1st (Practicing SQL) and on 2nd(Learning SQL). I'll share db structure for both separated by ---.
+
+
+
+First Site:---
+
+tables in my db are
+(select name from sqlite_master where type='table';)
+tables: 
+doctors
+sqlite_sequence
+province_names
+patients
+admissions
+
+columns of my main-table (patients) are: patient_id, first_name, last_name, gender, birth_date, city,  province_id, allergies, height, weight.
+
+
+
+---
+
+
+
+Second Site:---
+
+drop table departments;
+drop table employees;
+
+CREATE TABLE departments (
+    dept_id INT,
+    dept_name VARCHAR(100)
+);
+
+CREATE TABLE employees (
+    emp_id INT,
+    first_name VARCHAR(100),
+    last_name VARCHAR(100),
+    email VARCHAR(255),
+    salary DECIMAL(10, 2),
+    dept_id INT,
+
+    -- Constraints
+    CONSTRAINT pk_emp_id PRIMARY KEY (emp_id),
+    CONSTRAINT uq_email UNIQUE (email),
+    CONSTRAINT nn_last_name CHECK (last_name IS NOT NULL),
+    CONSTRAINT chk_salary CHECK (salary > 0),
+    CONSTRAINT fk_dept FOREIGN KEY (dept_id)
+        REFERENCES departments(dept_id)
+);
+
+INSERT INTO departments (dept_id, dept_name) VALUES
+(1, 'Human Resources'),
+(2, 'Engineering'),
+(3, 'Marketing'),
+(4, 'Finance');
+
+INSERT INTO employees (emp_id, first_name, last_name, email, salary, dept_id) VALUES
+(1, 'Amit', 'Patel', 'amit.patel@example.com', 55000.00, 1),
+(2, 'Neha', 'Sharma', 'neha.sharma@example.com', 62000.00, 2),
+(3, 'Ravi', 'Verma', 'ravi.verma@example.com', 48000.00, 3),
+(4, 'Sneha', 'Desai', 'sneha.desai@example.com', 59000.00, 1),
+(5, 'Anil', 'Kumar', 'anil.kumar@example.com', 53000.00, 2),
+(6, 'Priya', 'Nair', 'priya.nair@example.com', 61000.00, 4),
+(7, 'Karan', 'Joshi', 'karan.joshi@example.com', 51000.00, 1),
+(8, 'Divya', 'Mehta', 'divya.mehta@example.com', 67000.00, 3),
+(9, 'Raj', 'Kapoor', 'raj.kapoor@example.com', 56000.00, 2),
+(10, 'Nikita', 'Jain', 'nikita.jain@example.com', 47000.00, 3),
+(11, 'Arjun', 'Singh', 'arjun.singh@example.com', 64000.00, 4),
+(12, 'Megha', 'Agarwal', 'megha.agarwal@example.com', 59000.00, 1),
+(13, 'Sameer', 'Rao', 'sameer.rao@example.com', 52000.00, 2),
+(14, 'Pooja', 'Kulkarni', 'pooja.kulkarni@example.com', 61000.00, 3),
+(15, 'Vikas', 'Thakur', 'vikas.thakur@example.com', 58000.00, 4),
+(16, 'Isha', 'Gupta', 'isha.gupta@example.com', 60000.00, 1),
+(17, 'Tarun', 'Mishra', 'tarun.mishra@example.com', 54000.00, 2),
+(18, 'Ritika', 'Roy', 'ritika.roy@example.com', 50000.00, 3),
+(19, 'Rohit', 'Yadav', 'rohit.yadav@example.com', 63000.00, 1),
+(20, 'Manisha', 'Bhat', 'manisha.bhat@example.com', 57000.00, 2),
+(21, 'Ajay', 'Chopra', 'ajay.chopra@example.com', 48000.00, 4),
+(22, 'Sonia', 'Pillai', 'sonia.pillai@example.com', 65000.00, 3),
+(23, 'Deepak', 'Shetty', 'deepak.shetty@example.com', 52000.00, 1),
+(24, 'Renu', 'Dwivedi', 'renu.dwivedi@example.com', 61000.00, 2),
+(25, 'Harsh', 'Goel', 'harsh.goel@example.com', 60000.00, 3),
+(26, 'Swati', 'Malhotra', 'swati.malhotra@example.com', 53000.00, 4),
+(27, 'Aditya', 'Chavan', 'aditya.chavan@example.com', 56000.00, 1),
+(28, 'Nandini', 'Joshi', 'nandini.joshi@example.com', 59000.00, 2),
+(29, 'Suresh', 'Pandey', 'suresh.pandey@example.com', 64000.00, 3),
+(30, 'Shalini', 'Sinha', 'shalini.sinha@example.com', 47000.00, 4),
+(31, 'Varun', 'Bose', 'varun.bose@example.com', 55000.00, 1),
+(32, 'Ananya', 'Reddy', 'ananya.reddy@example.com', 62000.00, 2),
+(33, 'Gaurav', 'Dey', 'gaurav.dey@example.com', 48000.00, 3),
+(34, 'Kavita', 'Patil', 'kavita.patil@example.com', 59000.00, 1),
+(35, 'Farhan', 'Ali', 'farhan.ali@example.com', 53000.00, 2),
+(36, 'Rekha', 'Banerjee', 'rekha.banerjee@example.com', 61000.00, 4),
+(37, 'Rajat', 'Gupta', 'rajat.gupta@example.com', 51000.00, 1),
+(38, 'Payal', 'Bhatt', 'payal.bhatt@example.com', 67000.00, 3),
+(39, 'Sanjay', 'Rathi', 'sanjay.rathi@example.com', 56000.00, 2),
+(40, 'Lavanya', 'Shukla', 'lavanya.shukla@example.com', 47000.00, 3),
+(41, 'Zaid', 'Iqbal', 'zaid.iqbal@example.com', 64000.00, 4),
+(42, 'Rashi', 'Kohli', 'rashi.kohli@example.com', 59000.00, 1),
+(43, 'Milind', 'Saxena', 'milind.saxena@example.com', 52000.00, 2),
+(44, 'Bhavna', 'Sen', 'bhavna.sen@example.com', 61000.00, 3),
+(45, 'Lokesh', 'Chand', 'lokesh.chand@example.com', 58000.00, 4),
+(46, 'Tanya', 'Das', 'tanya.das@example.com', 60000.00, 1),
+(47, 'Dev', 'Chakraborty', 'dev.chakraborty@example.com', 54000.00, 2),
+(48, 'Shreya', 'Srivastava', 'shreya.srivastava@example.com', 50000.00, 3),
+(49, 'Nikhil', 'Tripathi', 'nikhil.tripathi@example.com', 63000.00, 1),
+(50, 'Bhavesh', 'Jadhav', 'bhavesh.jadhav@example.com', 57000.00, 2);
+
+select * from departments;
+select * from employees;
+
+
+---
+please help me in learning/practicing SQL.
+
+
+
+These are some of the questions from First site, I want you to give me similar questions for Second site so that i can practice on 1 site only(Second Site) on my own database.
+
+easycompleted
+Show first name, last name, and gender of patients whose gender is 'M'
+easycompleted
+Show first name and last name of patients who does not have allergies. (null)
+easycompleted
+Show first name of patients that start with the letter 'C'
+easycompleted
+Show first name and last name of patients that weight within the range of 100 to 120 (inclusive)
+easycompleted
+Update the patients table for the allergies column. If the patient's allergies is null then replace it with 'NKA'
+easycompleted
+Show first name and last name concatinated into one column to show their full name.
+easycompleted
+Show first name, last name, and the full province name of each patient.
+
+Example: 'Ontario' instead of 'ON'
+easycompleted
+Show how many patients have a birth_date with 2010 as the birth year.
+easycompleted
+Show the first_name, last_name, and height of the patient with the greatest height.
+easycompleted
+Show all columns for patients who have one of the following patient_ids:
+1,45,534,879,1000
+easycompleted
+Show the total number of admissions
+easycompleted
+Show all the columns from admissions where the patient was admitted and discharged on the same day.
+easycompleted
+Show the patient id and the total number of admissions for patient_id 579.
+easycompleted
+Based on the cities that our patients live in, show unique cities that are in province_id 'NS'.
+easyincomplete
+Write a query to find the first_name, last name, and birth date of patients who has height greater than 160 and weight greater than 70
+easyincomplete
+Write a query to find list of patients first_name, last_name, and allergies where allergies are not null and are from the city of 'Hamilton'
+mediumincomplete
+Show unique birth years from patients and order them by ascending.
+mediumincomplete
+Show unique first names from the patients table which only occurs once in the list.
+
+For example, if two or more people are named 'John' in the first_name column then don't include their name in the output list. If only 1 person is named 'Leo' then include them in the output.
+mediumincomplete
+Show patient_id and first_name from patients where their first_name start and ends with 's' and is at least 6 characters long.
+mediumincomplete
+Show patient_id, first_name, last_name from patients whos diagnosis is 'Dementia'.
+
+Primary diagnosis is stored in the admissions table.
+mediumincomplete
+Display every patient's first_name.
+Order the list by the length of each name and then by alphabetically
+mediumincomplete
+Show the total amount of male patients and the total amount of female patients in the patients table.
+Display the two results in the same row.
+mediumincomplete
+Show first and last name, allergies from patients which have allergies to either 'Penicillin' or 'Morphine'. Show results ordered ascending by allergies then by first_name then by last_name.
+mediumincomplete
+Show patient_id, diagnosis from admissions. Find patients admitted multiple times for the same diagnosis.
+mediumincomplete
+Show the city and the total number of patients in the city.
+Order from most to least patients and then by city name ascending.
+mediumincomplete
+Show first name, last name and role of every person that is either patient or doctor.
+The roles are either "Patient" or "Doctor"
+mediumincomplete
+Show all allergies ordered by popularity. Remove 'NKA' and NULL values from query.
+mediumincomplete
+Show all patient's first_name, last_name, and birth_date who were born in the 1970s decade. Sort the list starting from the earliest birth_date.
+mediumincomplete
+We want to display each patient's full name in a single column. Their last_name in all upper letters must appear first, then first_name in all lower case letters. Separate the last_name and first_name with a comma. Order the list by the first_name in decending order
+EX: SMITH,jane
+mediumincomplete
+Show the province_id(s), sum of height; where the total sum of its patient's height is greater than or equal to 7,000.
+mediumincomplete
+Show the difference between the largest weight and smallest weight for patients with the last name 'Maroni'
+mediumincomplete
+Show all of the days of the month (1-31) and how many admission_dates occurred on that day. Sort by the day with most admissions to least admissions.
+mediumincomplete
+Show the all columns for patient_id 542's most recent admission_date.
+mediumincomplete
+Show patient_id, attending_doctor_id, and diagnosis for admissions that match one of the two criteria:
+1. patient_id is an odd number and attending_doctor_id is either 1, 5, or 19.
+2. attending_doctor_id contains a 2 and the length of patient_id is 3 characters.
+mediumincomplete
+Show first_name, last_name, and the total number of admissions attended for each doctor.
+
+Every admission has been attended by a doctor.
+mediumincomplete
+For each doctor, display their id, full name, and the first and last admission date they attended.
+mediumincomplete
+Display the total amount of patients for each province. Order by descending.
+mediumincomplete
+For every admission, display the patient's full name, their admission diagnosis, and their doctor's full name who diagnosed their problem.
+mediumincomplete
+display the first name, last name and number of duplicate patients based on their first name and last name.
+mediumincomplete
+Display patient's full name,
+height in the unit feet rounded to 1 decimal,
+weight in the unit pounds rounded to 0 decimals,
+birth_date,
+gender non abbreviated.
+
+Convert CM to feet by dividing by 30.48.
+Convert KG to pounds by multiplying by 2.205.
+mediumincomplete
+Show patient_id, first_name, last_name from patients whose does not have any records in the admissions table. (Their patient_id does not exist in any admissions.patient_id rows.)
+mediumincomplete
+Display a single row with max_visits, min_visits, average_visits where the maximum, minimum and average number of admissions per day is calculated. Average is rounded to 2 decimal places.
+hardincomplete
+Show all of the patients grouped into weight groups.
+Show the total amount of patients in each weight group.
+Order the list by the weight group decending.
+
+For example, if they weight 100 to 109 they are placed in the 100 weight group, 110-119 = 110 weight group, etc.
+hardincomplete
+Show patient_id, weight, height, isObese from the patients table.
+
+Display isObese as a boolean 0 or 1.
+
+Obese is defined as weight(kg)/(height(m)2) >= 30.
+
+weight is in units kg.
+
+height is in units cm.
+hardincomplete
+Show patient_id, first_name, last_name, and attending doctor's specialty.
+Show only the patients who has a diagnosis as 'Dementia' and the doctor's first name is 'Lisa'
+
+Check patients, admissions, and doctors tables for required information.
+hardincomplete
+All patients who have gone through admissions, can see their medical documents on our site. Those patients are given a temporary password after their first admission. Show the patient_id and temp_password.
+
+The password must be the following, in order:
+1. patient_id
+2. the numerical length of patient's last_name
+3. year of patient's birth_date
+hardincomplete
+Each admission costs $50 for patients without insurance, and $10 for patients with insurance. All patients with an even patient_id have insurance.
+
+Give each patient a 'Yes' if they have insurance, and a 'No' if they don't have insurance. Add up the admission_total cost for each has_insurance group.
+hardincomplete
+Show the provinces that has more patients identified as 'M' than 'F'. Must only show full province_name
+hardincomplete
+We are looking for a specific patient. Pull all columns for the patient who matches the following criteria:
+- First_name contains an 'r' after the first two letters.
+- Identifies their gender as 'F'
+- Born in February, May, or December
+- Their weight would be between 60kg and 80kg
+- Their patient_id is an odd number
+- They are from the city 'Kingston'
+hardincomplete
+Show the percent of patients that have 'M' as their gender. Round the answer to the nearest hundreth number and in percent form.
+hardincomplete
+For each day display the total amount of admissions on that day. Display the amount changed from the previous date.
+hardincomplete
+Sort the province names in ascending order in such a way that the province 'Ontario' is always on top.
+hardincomplete
+We need a breakdown for the total amount of admissions each doctor has started each year. Show the doctor_id, doctor_full_name, specialty, year, total_admissions for that year.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Great! Let's build on the easy-level questions and now create **medium** and **hard** level SQL practice questions for the **Second Site** database (`employees`, `departments`). These will mirror the complexity and style of the First Site questions.
+
+---
+
+### 🟦 Medium Level Practice Questions
+
+1. **Show unique salary values from employees and order them in ascending order.**
+2. **Show unique first names from employees that occur only once.**
+3. **Show emp_id and first_name from employees whose first_name starts and ends with 'a' and is at least 6 characters long.**
+4. **Show emp_id, first_name, last_name of employees whose department is 'Marketing'.**
+5. **Display every employee's first_name ordered by length and then alphabetically.**
+6. **Show total number of employees in each department. Display results in a single row.**
+7. **Show first_name, last_name, and email of employees whose email contains either 'patel' or 'sharma'. Order by email, then first_name, then last_name.**
+8. **Show emp_id and salary for employees who have the same salary more than once.**
+9. **Show department name and total number of employees in each department. Order from most to least employees, then by department name.**
+10. **Show first name, last name, and role of every person. Roles are either 'Employee' or 'Department Head'.** (Assume department heads are employees with highest salary in each department.)
+11. **Show all email domains ordered by popularity. Remove duplicates and NULLs.**
+12. **Show employees born in the 1980s decade. Sort by earliest birth_date.** (Assuming birth_date column exists or can be added.)
+13. **Display each employee's full name in a single column. Format: LASTNAME,firstname. Order by first_name descending.**
+14. **Show dept_id(s) where the total salary of employees is greater than or equal to 300,000.**
+15. **Show the difference between the highest and lowest salary for employees in the 'Engineering' department.**
+16. **Show all days of the month (1–31) and how many employees joined on that day. Sort by most to least.** (Assuming a `join_date` column exists.)
+17. **Show all columns for the employee with the most recent join_date.**
+18. **Show emp_id, dept_id, and salary for employees matching either of these:**
+    - emp_id is odd and dept_id is 1, 3, or 4
+    - dept_id contains a 2 and emp_id is 2 digits long
+19. **Show first_name, last_name, and total number of employees managed by each department head.**
+20. **For each department, display dept_id, dept_name, and the first and last employee (by join_date).**
+21. **Display total number of employees per department. Order descending.**
+22. **For each employee, display full name, department name, and salary.**
+23. **Display first_name, last_name, and number of duplicate employees based on full name.**
+24. **Display employee full name, salary in thousands (rounded to 1 decimal), and email domain.**
+25. **Show emp_id, first_name, last_name of employees who do not belong to any department.**
+26. **Display a single row with max_salary, min_salary, average_salary. Round average to 2 decimals.**
+
+---
+
+### 🔴 Hard Level Practice Questions
+
+1. **Group employees into salary brackets (e.g., 50000–50999 = 50000 group). Show total employees in each bracket. Order descending.**
+2. **Show emp_id, salary, isHighEarner (1 if salary ≥ 60000, else 0).**
+3. **Show emp_id, first_name, last_name, and department name for employees whose salary is above 60000 and department is 'Finance'.**
+4. **Generate a temporary password for each employee: emp_id + length of last_name + year of join_date.** (Assuming `join_date` exists.)
+5. **Calculate total salary cost for employees with and without insurance. Assume even emp_id = has insurance.**
+6. **Show departments that have more employees with salary > 60000 than ≤ 60000.**
+7. **Find employee who matches all:**
+   - first_name contains 'r' after 2nd letter
+   - salary between 50000 and 60000
+   - emp_id is odd
+   - department is 'Marketing'
+8. **Show percent of employees with salary > 60000. Round to nearest hundredth and show as percent.**
+9. **For each day, show total employees joined and change from previous day.** (Assuming `join_date` exists.)
+10. **Sort department names ascending, but always show 'Engineering' on top.**
+11. **Break down total salary per department per year. Show dept_id, dept_name, year, total_salary.** (Assuming `join_date` exists.)
+
+---
+
+Would you like me to generate **SQL queries** for any of these questions to help you practice further?

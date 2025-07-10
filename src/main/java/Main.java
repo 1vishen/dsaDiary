@@ -8,6 +8,6 @@ public class Main {
     RuntimePoly.main(new String[0]);
     System.out.println("---");
     PerformanceTesting.main(new String[0]);
- 
+
   }
 }
