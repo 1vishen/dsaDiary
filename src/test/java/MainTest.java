@@ -1,6 +1,6 @@
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-import java.time.Duration; 
+import java.time.Duration;
 
 public class MainTest {
 
@@ -17,9 +17,8 @@ public class MainTest {
     }
 
     @Test
-    void PerformanceTest(){
+    void PerformanceTest() {
         System.out.println("Running test 3...");
-        assertTimeout(Duration.ofMillis(10), () -> PerformanceTesting.main(new String[0]));
+        assertTimeout(Duration.ofMillis(10), () -> PerformanceTesting.main(new String[0])); 
     }
-
 }
