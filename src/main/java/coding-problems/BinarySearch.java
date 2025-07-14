@@ -1,22 +1,14 @@
 class Solution {
-    public int binarysearch(int[] arr, int k) {
-        // Code Here
-        int left = 0, right = arr.length - 1;
+    public int search(int[] nums, int target) {
+        int left = 0, right = nums.length - 1, mid;
 
-        int result = -1;
 
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
-
-            if (arr[mid] == k) {
-                result = mid;
-                right = mid - 1;
-            } else if (arr[mid] > k) {
-                right = mid - 1;
-            } else {
-                left = mid + 1;
-            }
+        while(left <= right){
+            mid = left + (right - left) / 2;
+            if(target == nums[mid]) return mid;
+            else if(target > nums[mid]) left = mid + 1;
+            else right = mid - 1;
         }
-        return result;
+        return -1;
     }
 }
