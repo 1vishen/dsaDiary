@@ -10,6 +10,7 @@ public class Main {
     System.out.println("---");
     PerformanceTesting.main(new String[0]);
     System.out.println("---");
+    JavaPracQues.main(new String[0]);
 
     System.out.println("---*---");
   }
