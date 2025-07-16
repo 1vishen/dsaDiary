@@ -10,7 +10,10 @@ public class Main {
     System.out.println("---");
     PerformanceTesting.main(new String[0]);
     System.out.println("---");
+<<<<<<< HEAD
     JavaPracQues.main(new String[0]);
+    System.out.println("---");
+>>>>>>> bd5af70 (Main.java changes, not important)
 
     System.out.println("---*---");
   }
