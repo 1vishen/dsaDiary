@@ -45,10 +45,10 @@ out/
 .vscode/
 
 # ---------------------
-# Replit (Optional)
+# Replit (Optional) if included it'll be deleted from replit when it fetches from github, so replit won't run
 # ---------------------
-.replit
-replit.nix
+#.replit
+#replit.nix
 
 # ---------------------
 # OS / Editor-specific
