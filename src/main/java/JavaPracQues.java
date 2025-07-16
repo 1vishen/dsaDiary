@@ -272,12 +272,12 @@ public class JavaPracQues {
 
     // 16. Write a Java program to count the number of vowels in a given string.
     public static class Class16 {
-        static String str = "Hello";
+        static String str = "Eello";
         static int count = 0;
 
         public static int method16() {
+            str = str.toLowerCase();
             for (int i = 0; i < str.length(); i++) {
-                str.toLowerCase();
                 if (str.charAt(i) == 'a' || str.charAt(i) == 'e' || str.charAt(i) == 'i' ||
                         str.charAt(i) == 'o' || str.charAt(i) == 'u') {
                     count++;
@@ -641,7 +641,7 @@ public class JavaPracQues {
  * num: 5 pre-inc: 6post-inc: 6
  * post-inc again: 7
  * 1 2 3 4 1 2 3 4
- * Class16: 2
+ * Class16: 3
  * Class17: true
  * Class18: olleH
  * Class19: 5
