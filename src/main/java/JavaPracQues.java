@@ -115,7 +115,6 @@ public class JavaPracQues {
         public static int method7() {
             for (int i = n; i > 0; i--) {
                 fac *= i;
-                i--;
             }
             return fac;
         }
@@ -126,9 +125,11 @@ public class JavaPracQues {
         static int n = 5;
 
         public static void method8() {
-            for (int i = 1; i < 10; i++) {
-                System.out.println("Multi-Tab: " + n * i);
+            System.out.println("Multiplication Table");
+            for (int i = 1; i <= 10; i++) {
+                System.out.print(n * i + " ");
             }
+            System.out.println();
         }
     }
 
@@ -253,14 +254,15 @@ public class JavaPracQues {
     public static class Class1415 {
         public static void method1415() {
             int a = 5;
-            System.out.println("num: " + a + "pre-inc: " + ++a + "post-inc: " + a++);
+            System.out.println("num: " + a + " pre-inc: " + ++a + "post-inc: " + a++);
             System.out.println("post-inc again: " + a);
             for (int i = 1; i < 5; i++) {
-                System.out.println(i);
+                System.out.print(i + " ");
             }
             for (int i = 1; i < 5; ++i) {
-                System.out.println(i);
+                System.out.print(i + " ");
             }
+            System.out.println();
         }
     }
 
@@ -287,10 +289,10 @@ public class JavaPracQues {
 
     // 17. Write a Java program to check if a given string is a palindrome.
     public static class Class17 {
-        static String str = "Allo";
+        static String str = "Alla";
 
         public static boolean method17() {
-            str.toLowerCase();
+            str = str.toLowerCase();
             for (int i = 0; i < str.length() / 2; i++) {
                 if (str.charAt(i) != str.charAt(str.length() - i - 1))
                     return false;
@@ -323,7 +325,6 @@ public class JavaPracQues {
 
         public static int method19() {
             for (char s : str.toCharArray()) {
-                System.out.print(s + " ");
                 count++;
             }
             return count;
@@ -334,7 +335,7 @@ public class JavaPracQues {
     // equals() method.
     public static class Class20 {
         static String str1 = "Hello";
-        static String str2 = "Hello2";
+        static String str2 = "Helli";
 
         public static boolean method20() {
             if (str1.length() != str2.length())
@@ -505,7 +506,7 @@ public class JavaPracQues {
 
         public static void method27() {
             System.out.println(
-                    "original: " + a + b + " ++a + b: " + (++a + b) + " a++ + b: " + (a++ + b) + "new: " + a + b);
+                    "original: " + (a + b) + " ++a + b: " + (++a + b) + " a++ + b: " + (a++ + b) + " new: " + (a + b));
         }
     }
 
@@ -624,17 +625,10 @@ public class JavaPracQues {
  * Class4: [5, 4, 3, 2, 1]
  * Class5: [1, 4, 5, 6, 6, 59]
  * Class6: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144]
- * Class7: 15
+ * Class7: 120
  * Class8:
- * Multi-Tab: 5
- * Multi-Tab: 10
- * Multi-Tab: 15
- * Multi-Tab: 20
- * Multi-Tab: 25
- * Multi-Tab: 30
- * Multi-Tab: 35
- * Multi-Tab: 40
- * Multi-Tab: 45
+ * Multiplication Table
+ * 5 10 15 20 25 30 35 40 45 50
  * Class9: true
  * Class10: 2550
  * Class11:
@@ -644,20 +638,13 @@ public class JavaPracQues {
  * Class13:
  * Pass!
  * Class1415:
- * num: 5pre-inc: 6post-inc: 6
+ * num: 5 pre-inc: 6post-inc: 6
  * post-inc again: 7
- * 1
- * 2
- * 3
- * 4
- * 1
- * 2
- * 3
- * 4
+ * 1 2 3 4 1 2 3 4
  * Class16: 2
- * Class17: false
+ * Class17: true
  * Class18: olleH
- * H e l l o Class19: 5
+ * Class19: 5
  * Class20: false
  * Class21: 5
  * Class22: [1, 2, 2, 4, 6, 7, 9, 22, 33, 55, 66, 77, 99, 101]
@@ -668,7 +655,7 @@ public class JavaPracQues {
  * Class26:
  * Add: 11
  * Class27:
- * original: 11 ++a + b: 3 a++ + b: 3new: 31
+ * original: 2 ++a + b: 3 a++ + b: 3 new: 4
  * Class28: true
  * Class29: HelloEveryoneThisisaString
  * Class30: Thisis
