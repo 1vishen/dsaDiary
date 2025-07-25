@@ -6,51 +6,28 @@ public class Main {
     System.out.println("---");
     // JavaPracQues.main(new String[0]);
     System.out.println("---");
-    boolean bool1 = Solution.isIsomorphic("badc", "baba");
-    System.out.println(bool1);
+    System.out.println(Solution.isIsomorphic("srsr", "baba"));
     System.out.println("---*---");
   }
 }
 
 class Solution {
-  public static boolean isIsomorphic(String s, String t) {
-    if (s.length() != t.length())
-      return false;
-    
-    Map<Character, Character> sToT = new HashMap<>();
-    Map<Character, Character> tToS = new HashMap<>();
+    public static boolean isIsomorphic(String s, String t) {
+        if(s.length() != t.length()) return false;
 
-    for (int i = 0; i < s.length(); i++) {
-      char sChar = s.charAt(i);
-      char tChar = t.charAt(i);
-      
-      // Check if sChar is already mapped
-      if (sToT.containsKey(sChar)) {
-        if (sToT.get(sChar) != tChar) {
-          return false;
-        }
-      } else {
-        sToT.put(sChar, tChar);
-      }
-      
-      // Check if tChar is already mapped
-      if (tToS.containsKey(tChar)) {
-        if (tToS.get(tChar) != sChar) {
-          return false;
-        }
-      } else {
-        tToS.put(tChar, sChar);
-      }
-    }
-    return true;
-  }
+        Map<Character, Character> s2t = new HashMap<>();
+        Map<Character, Character> t2s = new HashMap<>();
 
-  public static Character getKeyByValue(Map<Character, Character> map, char value) {
-    for (Map.Entry<Character, Character> entry : map.entrySet()) {
-      if (entry.getValue() == value) {
-        return entry.getKey();
-      }
+        for(int i = 0; i < s.length(); i++) {
+            char sc = s.charAt(i);
+            char tc = t.charAt(i);
+            if(s2t.containsKey(sc) && s2t.get(sc) != tc) return false;
+            if(t2s.containsKey(tc) && t2s.get(tc) != sc) return false;
+            if(!s2t.containsKey(sc)) {
+                s2t.put(sc, tc);
+                t2s.put(tc, sc);
+            }
+        }
+        return true;
     }
-    return null;
-  }
 }
