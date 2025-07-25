@@ -16,17 +16,30 @@ class Solution {
   public static boolean isIsomorphic(String s, String t) {
     if (s.length() != t.length())
       return false;
-    Map<Character, Character> mapping = new HashMap<>();
+    
+    Map<Character, Character> sToT = new HashMap<>();
+    Map<Character, Character> tToS = new HashMap<>();
 
     for (int i = 0; i < s.length(); i++) {
-      if (mapping.containsKey(s.charAt(i)) == false) {
-        mapping.put(s.charAt(i), t.charAt(i));
-      } else if (mapping.containsKey(s.charAt(i)) && (mapping.get(s.charAt(i)) == t.charAt(i))) {
-        continue;
-      } else if (mapping.containsValue(t.charAt(i)) && getKeyByValue(mapping, t.charAt(i)) == s.charAt(i)) {
-        continue;
+      char sChar = s.charAt(i);
+      char tChar = t.charAt(i);
+      
+      // Check if sChar is already mapped
+      if (sToT.containsKey(sChar)) {
+        if (sToT.get(sChar) != tChar) {
+          return false;
+        }
       } else {
-        return false;
+        sToT.put(sChar, tChar);
+      }
+      
+      // Check if tChar is already mapped
+      if (tToS.containsKey(tChar)) {
+        if (tToS.get(tChar) != sChar) {
+          return false;
+        }
+      } else {
+        tToS.put(tChar, sChar);
       }
     }
     return true;
