@@ -6,27 +6,27 @@ public class Main {
     System.out.println("---");
     // JavaPracQues.main(new String[0]);
     System.out.println("---");
-    System.out.println(Solution.isIsomorphic("srsr", "baba"));
+    System.out.println(Solution.isAnagram("anagra", "nagara"));
     System.out.println("---*---");
   }
 }
 
 class Solution {
-    public static boolean isIsomorphic(String s, String t) {
-        if(s.length() != t.length()) return false;
-
-        Map<Character, Character> s2t = new HashMap<>();
-        Map<Character, Character> t2s = new HashMap<>();
+    public static boolean isAnagram(String s, String t) {
+        if(s.length() != t.length()) return  false;
+        int[] freqS = new int[26];
+        int[] freqT = new int[26];
 
         for(int i = 0; i < s.length(); i++) {
-            char sc = s.charAt(i);
-            char tc = t.charAt(i);
-            if(s2t.containsKey(sc) && s2t.get(sc) != tc) return false;
-            if(t2s.containsKey(tc) && t2s.get(tc) != sc) return false;
-            if(!s2t.containsKey(sc)) {
-                s2t.put(sc, tc);
-                t2s.put(tc, sc);
-            }
+            int indexS = 'z' - s.charAt(i);
+            int indexT = 'z' - t.charAt(i);
+
+            freqS[indexS] += 1;
+            freqT[indexT] += 1;
+        }
+
+        for(int i = 0; i < 26; i++){
+            if(freqS[i] != freqT[i]) return false;
         }
         return true;
     }
