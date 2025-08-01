@@ -6,8 +6,6 @@ public class Main {
     System.out.println("---");
     // JavaPracQues.main(new String[0]);
     System.out.println("---");
-    // System.out.println(Solution.reverseVowels("anenino"));
     System.out.println("---*---");
   }
 }
-
