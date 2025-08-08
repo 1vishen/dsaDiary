@@ -5,10 +5,6 @@
 │   │   └── java/
 │   │       ├── coding-problems/
 │   │       │   └── pattern1.java
-│   │       ├── AnonymousClass.java
-│   │       ├── FileHandling.java
-│   │       ├── FileHandling2.java
-│   │       ├── FileHandling3.java
 │   │       └── Main.java
 │   └── test/
 │       └── java/
