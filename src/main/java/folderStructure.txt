@@ -5,6 +5,7 @@
 │   │   └── java/
 │   │       ├── coding-problems/
 │   │       │   └── pattern1.java
+│   │       │   └── All Other DSA Solutions....
 │   │       └── Main.java
 │   └── test/
 │       └── java/
