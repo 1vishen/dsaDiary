@@ -1,20 +1,9 @@
-import java.util.*;
-
-public class Main {
-  public static void main(String[] args) {
-    System.out.println("Hello world!");
-    System.out.println("---");
-    System.out.println(Solution.myAtoi("2147483646"));
-    System.out.println("---*---");
-  }
-}
-
 class Solution {
-    public static int myAtoi(String s) {
+    public int myAtoi(String s) {
         int result = 0;
         int correctSign = 1;
         int i = 0;
-      
+
         String newS = s.trim();
         if(newS.isEmpty()) return 0;
 
@@ -32,7 +21,7 @@ class Solution {
             else {
                 int nextDigit = ch - '0';
                 if(result <= (Integer.MAX_VALUE - nextDigit) / 10)
-                    result = result * 10 + (ch - '0');
+                    result = result * 10 + nextDigit;
                 else {
                     return correctSign == -1 ? Integer.MIN_VALUE : Integer.MAX_VALUE;
                 }
