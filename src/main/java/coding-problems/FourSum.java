@@ -1,39 +1,44 @@
 class Solution {
     public List<List<Integer>> fourSum(int[] nums, int target) {
-        if(nums.length == 0) return new ArrayList<List<Integer>>();
+        if (nums.length == 0)
+            return new ArrayList<List<Integer>>();
 
-        Set<List<Integer>> resultSet = new HashSet<>();
+        List<List<Integer>> resultList = new ArrayList<>();
         Arrays.sort(nums);
 
-        for(int i = 0; i < nums.length - 3; i++) {
-            for(int j = i + 1; j < nums.length - 2; j++) {
+        for (int i = 0; i < nums.length - 3; i++) {
+            if (i > 0 && nums[i] == nums[i - 1])
+                continue;
+
+            for (int j = i + 1; j < nums.length - 2; j++) {
+                if (j > i + 1 && nums[j] == nums[j - 1])
+                    continue;
+
                 int left = j + 1, right = nums.length - 1;
 
-                while(left < right) {
+                while (left < right) {
                     long sum = (long) nums[i] + nums[j] + nums[left] + nums[right];
-                    List<Integer> tempList = new ArrayList<>();
 
-                    if(sum == target) {
-                        tempList.add(nums[i]);
-                        tempList.add(nums[j]);
-                        tempList.add(nums[left]);
-                        tempList.add(nums[right]);
+                    if (sum == target) {
+                        resultList.add(Arrays.asList(nums[i], nums[j],
+                                nums[left], nums[right]));
 
-                        resultSet.add(tempList);
+                        while (left < right && nums[left] == nums[left + 1])
+                            left++;
+                        while (left < right && nums[right] == nums[right - 1])
+                            right--;
+
                         left++;
                         right--;
-                    }
-                    else if(sum > target) {
+                    } else if (sum > target) {
                         right--;
-                    }
-                    else{
+                    } else {
                         left++;
                     }
-
                 }
             }
         }
 
-        return new ArrayList<>(resultSet);
+        return resultList;
     }
 }
