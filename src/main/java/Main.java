@@ -5,9 +5,10 @@ public class Main {
     System.out.println("Hello world!");
     System.out.println("---");
     System.out.println(
-        Solution.fourSum(new int[] { 2, 2, 2, 2, 2 }, 8)
+        Solution.climbStairs(3)
     );
     System.out.println("---*---");
   }
 }
+
 
