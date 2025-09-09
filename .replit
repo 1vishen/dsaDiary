@@ -79,3 +79,6 @@ mode = "sequential"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "mvn test"
+
+[agent]
+expertMode = true
