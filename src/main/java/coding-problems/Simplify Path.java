@@ -2,7 +2,7 @@ class Solution {
     public String simplifyPath(String path) {
         if (path.length() == 0) return "";
 
-        List<String> nameList = new LinkedList<>(Arrays.asList(path.split("/+")));
+        List<String> nameList = new ArrayList<>(Arrays.asList(path.split("/+")));
         Deque<String> resultStack = new ArrayDeque<>();
 
         Iterator<String> it = nameList.iterator();
