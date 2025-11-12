@@ -1,6 +1,7 @@
 class Solution {
     public int findContentChildren(int[] g, int[] s) {
-        /* Skip cookies, not children, to find the smallest cookie that satisfies each child's greed cause, If a cookie is too small it can't help move to the next one. */
+        /* Skip cookies, not children, to find the smallest cookie that satisfies each child's
+         greed cause, If a cookie is too small it can't help move to the next one. */
         Arrays.sort(g);
         Arrays.sort(s);
 
