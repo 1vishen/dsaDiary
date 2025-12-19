@@ -6,7 +6,12 @@
 │   │       ├── coding-problems/
 │   │       │   └── pattern1.java
 │   │       │   └── All Other DSA Solutions....
+│   │       │   └── All Other SQL Solutions....
 │   │       └── Main.java
 │   └── test/
 │       └── java/
 │           └── MainTest.java
+
+---
+
+//SQL Solutions are in .java files as well
